@@ -1,4 +1,4 @@
-import { StyledIcon} from "./style";
+import { StyledIcon } from "./style";
 
 
 
@@ -15,7 +15,7 @@ const IconStyle = (props) => {
         {children}
       </StyledButton> */}
 
-  
+
     </>
   );
 };

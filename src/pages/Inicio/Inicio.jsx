@@ -106,14 +106,14 @@ export function Inicio() {
     return (
         <Container>
             <div className='text-center'>
-               <TextStyle mode="titulo"> Planner</TextStyle>
+                <TextStyle mode="titulo"> Planner</TextStyle>
             </div>
 
-           
+
 
             <div className='row'>
                 <div className='col-md-6 text-center mt-4'>
-                <TextStyle mode="subtitulo"> Tarefas </TextStyle>                    <ListGroup variant="flush">
+                    <TextStyle mode="subtitulo"> Tarefas </TextStyle>                    <ListGroup variant="flush">
                         {tasks.map((task, index) => (
                             <ListGroup.Item key={task.id} className={task.completed ? 'completed-task' : ''}
                             >
@@ -121,15 +121,15 @@ export function Inicio() {
                                 {task.completed ? (
                                     <IconStyle variant="link" mode="do" onClick={() => riscarTarefa(task.id)}><i class="bi bi-check-square-fill"></i></IconStyle>
                                 ) : (
-                                    <IconStyle variant="link"   onClick={() => riscarTarefa(task.id)}><i class="bi bi-square"></i></IconStyle>
+                                    <IconStyle variant="link" onClick={() => riscarTarefa(task.id)}><i class="bi bi-square"></i></IconStyle>
                                 )}
 
-{task.completed ? (
-                               <TextStyle mode="riscado"> {task.nome} </TextStyle>
+                                {task.completed ? (
+                                    <TextStyle mode="riscado"> {task.nome} </TextStyle>
 
-                               ) : (
+                                ) : (
 
-                                <TextStyle> {task.nome} </TextStyle>
+                                    <TextStyle> {task.nome} </TextStyle>
 
                                 )}
 
@@ -161,15 +161,15 @@ export function Inicio() {
                         ))}
 
                     </ListGroup>
-                    <div className='d-flex justify-content-center'> 
-                  
-                       <InputStyle type="text" placeholder="Adicione sua tarefa" value={taskInput} onChange={handleTaskInputChange} className=" text-center form-control-sm" />
+                    <div className='d-flex justify-content-center'>
+
+                        <InputStyle type="text" placeholder="Adicione sua tarefa" value={taskInput} onChange={handleTaskInputChange} className=" text-center form-control-sm" />
 
                         <ButtonStyle onClick={adicionarTarefa}> + </ButtonStyle> </div>
-                 
-                       
 
-                       
+
+
+
                 </div>
 
                 <div className='col-md-6 text-center mt-4'>

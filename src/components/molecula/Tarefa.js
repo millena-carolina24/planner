@@ -7,10 +7,10 @@ import IconStyle from '../atoms/Icon/Icon.Style'
 export default function Tarefa() {
   return (
     <>
-<IconStyle> </IconStyle>
-   <Text></Text>
-   <IconStyle> </IconStyle>
-   <IconStyle> </IconStyle>
+      <IconStyle> </IconStyle>
+      <Text></Text>
+      <IconStyle> </IconStyle>
+      <IconStyle> </IconStyle>
 
 
     </>

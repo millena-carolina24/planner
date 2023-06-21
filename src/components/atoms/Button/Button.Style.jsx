@@ -7,7 +7,7 @@ const ButtonStyle = (props) => {
 
   return (
     <>
-      <StyledButton $mode={mode}onClick={onClick}>
+      <StyledButton $mode={mode} onClick={onClick}>
         {children}
       </StyledButton>
 
@@ -15,7 +15,7 @@ const ButtonStyle = (props) => {
         {children}
       </StyledButton> */}
 
-  
+
     </>
   );
 };
