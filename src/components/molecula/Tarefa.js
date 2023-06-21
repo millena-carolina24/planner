@@ -1,15 +1,16 @@
 import React from 'react'
 import Text from '../atoms/Text'
-import Button from '../atoms/button'
+import ButtonStyle from '../atoms/Button/Button.Style'
 import Input from '../atoms/Input'
+import IconStyle from '../atoms/Icon/Icon.Style'
 
 export default function Tarefa() {
   return (
     <>
-    <Button></Button>
-    <Text></Text>
-    <Button></Button>
-    <Button></Button>
+<IconStyle> </IconStyle>
+   <Text></Text>
+   <IconStyle> </IconStyle>
+   <IconStyle> </IconStyle>
 
 
     </>

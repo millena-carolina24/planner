@@ -4,6 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Modal from 'react-bootstrap/Modal';
+import ButtonStyle from '../../components/atoms/Button/Button.Style';
+import IconStyle from '../../components/atoms/Icon/Icon.Style';
+import TextStyle from '../../components/atoms/Text/Text.Style';
+import InputStyle from '../../components/Input/Input.Style';
 
 
 export function Inicio() {
@@ -101,34 +105,35 @@ export function Inicio() {
 
     return (
         <Container>
-            <div>
-                <h1 className='text-center'>Planner Diário</h1>
+            <div className='text-center'>
+               <TextStyle mode="titulo"> Planner</TextStyle>
             </div>
 
-            <style>
-                {`
-          .completed-task {
-            text-decoration: line-through;
-          }
-        `}
-            </style>
+           
 
             <div className='row'>
                 <div className='col-md-6 text-center mt-4'>
-                    <h4>Tarefas</h4>
-                    <ListGroup variant="flush">
+                <TextStyle mode="subtitulo"> Tarefas </TextStyle>                    <ListGroup variant="flush">
                         {tasks.map((task, index) => (
                             <ListGroup.Item key={task.id} className={task.completed ? 'completed-task' : ''}
                             >
 
                                 {task.completed ? (
-                                    <Button variant="link" onClick={() => riscarTarefa(task.id)}><i class="bi bi-check-square-fill"></i></Button>
+                                    <IconStyle variant="link" mode="do" onClick={() => riscarTarefa(task.id)}><i class="bi bi-check-square-fill"></i></IconStyle>
                                 ) : (
-                                    <Button variant="link" onClick={() => riscarTarefa(task.id)}><i class="bi bi-square"></i></Button>
+                                    <IconStyle variant="link"   onClick={() => riscarTarefa(task.id)}><i class="bi bi-square"></i></IconStyle>
                                 )}
-                                {task.nome}
 
-                                <Button variant="link" onClick={handleShow}>  <i class="bi bi-pencil-square"></i> </Button> <Button variant="link" onClick={() => deletarTarefa(task.id)}><i class="bi bi-trash3"></i>  </Button>
+{task.completed ? (
+                               <TextStyle mode="riscado"> {task.nome} </TextStyle>
+
+                               ) : (
+
+                                <TextStyle> {task.nome} </TextStyle>
+
+                                )}
+
+                                <IconStyle variant="link" onClick={handleShow}>  <i class="bi bi-pencil-square"></i> </IconStyle> <IconStyle variant="link" onClick={() => deletarTarefa(task.id)}><i class="bi bi-trash3"></i>  </IconStyle>
 
                                 <Modal show={show} onHide={handleClose}>
                                     <Modal.Header closeButton>
@@ -156,9 +161,15 @@ export function Inicio() {
                         ))}
 
                     </ListGroup>
-                    <div className='d-flex justify-content-around'> <Form.Control type="text" className=" text-center form-control-sm" placeholder="Adicione sua tarefa" value={taskInput}
-                        onChange={handleTaskInputChange} />
-                        <Button onClick={adicionarTarefa} variant="light"> + </Button> </div>
+                    <div className='d-flex justify-content-center'> 
+                  
+                       <InputStyle type="text" placeholder="Adicione sua tarefa" value={taskInput} onChange={handleTaskInputChange} className=" text-center form-control-sm" />
+
+                        <ButtonStyle onClick={adicionarTarefa}> + </ButtonStyle> </div>
+                 
+                       
+
+                       
                 </div>
 
                 <div className='col-md-6 text-center mt-4'>
